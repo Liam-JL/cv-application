@@ -1,0 +1,20 @@
+Components: 
+- About Me
+	- Name
+	- Title
+	- Bio
+- Contact
+	- Email
+	- Number
+	- Location
+	- Social media Link
+- Work Experience
+- Skills
+- Education
+- Interests
+
+Each section should contain an edit and submit button
+Buttons are only visible when user hovers over section (or tabs into it)
+Edit mode and rendered mode for each component
+Each component info is stored in local storage
+Exporting finished cv as a pdf should be the design given, even if mobile view was used to create the cv
