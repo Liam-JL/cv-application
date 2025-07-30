@@ -6,7 +6,7 @@ import { TbSocial as SocialIcon} from "react-icons/tb";
 
 export default function ContactSection({ active }) {
     return (
-        <section className="contact-section" aria-label="contact-me">
+        <section className="section section--contact" aria-label="contact-me">
             <ul className="contact-section__list">
                 <li>
                     <ContactInfoBlock label="email" active={active} icon={EmailIcon}/>
