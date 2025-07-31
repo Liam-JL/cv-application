@@ -20,3 +20,4 @@ Only 1 component can be in edit mode at a time
 When user clicks on another component to edit it, any other component is submitted if in edit mode
 Each component info is stored in local storage
 Exporting finished cv as a pdf should be the design given, even if mobile view was used to create the cv
+Get confirmation on deleting work or education block
