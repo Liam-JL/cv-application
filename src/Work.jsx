@@ -11,7 +11,9 @@ export default function WorkSection({active}) {
             company: "Company Name",
             location: "Location",
             dates: "Dates from - To",
-            summary: ["summary point 1", "Summary point 2", "Summary point 3"]
+            summary: ["Summary of your accomplishments in this position", 
+                "Summary of your accomplishments in this position", 
+                "Summary of your accomplishments in this position"]
         }
 
         setHistory(prev => {
@@ -27,13 +29,26 @@ export default function WorkSection({active}) {
         )
     }
 
+    function handleSummaryEdit(id, index, newText) {
+        setHistory(prev => 
+            prev.map((entry) => {
+                if (entry.id !== id) return entry
+
+                const updatedSummary = [...entry.summary];
+                updatedSummary[index] = newText;
+
+                return {...entry, summary: updatedSummary}
+            })
+        )
+    }
+
     return (
         <section className="section section--work" aria-labelledby="work-experience">
             <h2 id="work-experience">Work Experience</h2>
             <ul className="history-block-list">
             {history.map(entry => {
                 return (
-                    <HistoryBlock {...entry} key={entry.id} active={active} handleEdit = {handleEdit} />
+                    <HistoryBlock {...entry} key={entry.id} active={active} handleEdit = {handleEdit} handleSummaryEdit = {handleSummaryEdit} />
                 )
             })}
             </ul>
