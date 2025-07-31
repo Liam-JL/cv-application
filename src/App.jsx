@@ -7,7 +7,7 @@ import EducationSection from "./Education"
 function App() {
   return (
     <>
-      <AboutMeSection active={true}/>
+      <AboutMeSection active={false}/>
       <ContactSection active={false} />    
       <WorkSection active={true}/>
       <SkillSection active={true} />
