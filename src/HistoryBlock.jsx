@@ -1,4 +1,4 @@
-export function HistoryBlock({ active, id, title, company, location, dates, summary, handleEdit, handleSummaryEdit }) {
+export function HistoryBlock({ active, id, title, company, location, dates, summary, handleEdit, handleSummaryEdit, handleDelete }) {
 
     return active ? (
         <li>
@@ -18,6 +18,7 @@ export function HistoryBlock({ active, id, title, company, location, dates, summ
                         </li>
                         )}
                 </ul>
+                <button className="btn" onClick={() => handleDelete(id)}>Delete Block</button>
         </li>
     ) : (
         <li>

@@ -42,13 +42,19 @@ export default function WorkSection({active}) {
         )
     }
 
+    function handleDelete(id) {
+        setHistory(prev =>
+            prev.filter(entry => entry.id !== id)
+        )
+    }
+
     return (
         <section className="section section--work" aria-labelledby="work-experience-heading">
             <h2 id="work-experience-heading">Work Experience</h2>
             <ul className="history-block-list">
             {history.map(entry => {
                 return (
-                    <HistoryBlock {...entry} key={entry.id} active={active} handleEdit = {handleEdit} handleSummaryEdit = {handleSummaryEdit} />
+                    <HistoryBlock {...entry} key={entry.id} active={active} handleEdit = {handleEdit} handleSummaryEdit = {handleSummaryEdit} handleDelete={handleDelete}/>
                 )
             })}
             </ul>
