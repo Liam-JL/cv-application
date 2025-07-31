@@ -1,4 +1,4 @@
-export function HistoryBlock({ active, id, title, company, location, dates, summary, handleEdit }) {
+export function HistoryBlock({ active, id, title, company, location, dates, summary, handleEdit, handleSummaryEdit }) {
 
     return active ? (
         <li>
@@ -6,6 +6,18 @@ export function HistoryBlock({ active, id, title, company, location, dates, summ
                 <input name="company" type="text" value={company} onChange={e => handleEdit(id, "company", e.target.value)} />
                 <input name="location" type="text" value={location} onChange={e => handleEdit(id, "location", e.target.value)} />
                 <input name="dates" type="text" value={dates} onChange={e => handleEdit(id, "dates", e.target.value)} />
+                <ul>
+                    {summary.map((point, index) => 
+                        <li>
+                            <input 
+                            key={index}
+                            type="text"
+                            value={point}
+                            onChange={(e) => handleSummaryEdit(id, index, e.target.value)}
+                            />
+                        </li>
+                        )}
+                </ul>
         </li>
     ) : (
         <li>
@@ -13,6 +25,9 @@ export function HistoryBlock({ active, id, title, company, location, dates, summ
             <p>{company}</p>
             <p>{location}</p>
             <p>{dates}</p>
+            <ul>
+                {summary.map(point => <li>{point}</li>)}
+            </ul>
         </li>
     )
 }
