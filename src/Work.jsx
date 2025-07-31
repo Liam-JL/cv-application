@@ -43,8 +43,8 @@ export default function WorkSection({active}) {
     }
 
     return (
-        <section className="section section--work" aria-labelledby="work-experience">
-            <h2 id="work-experience">Work Experience</h2>
+        <section className="section section--work" aria-labelledby="work-experience-heading">
+            <h2 id="work-experience-heading">Work Experience</h2>
             <ul className="history-block-list">
             {history.map(entry => {
                 return (
