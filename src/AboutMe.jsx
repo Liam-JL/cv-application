@@ -2,14 +2,14 @@ import { useEffect, useState } from "react"
 
 export default function AboutMeSection({active}) {
     const [aboutMe, setAboutMe] = useState(() => {
-        const localValue = localStorage.getItem("ABOUTMEITEMS")
+        const localValue = localStorage.getItem("ABOUT_ME_ITEMS")
         if (localValue == null) return {name:"name", title:"title", bio:"bio"}
 
         return JSON.parse(localValue)
     })
 
     useEffect(() => {
-        localStorage.setItem("ABOUTMEITEMS", JSON.stringify(aboutMe))
+        localStorage.setItem("ABOUT_ME_ITEMS", JSON.stringify(aboutMe))
     }, [aboutMe])                                                                                   
 
     function handleEdit(field, value) {
