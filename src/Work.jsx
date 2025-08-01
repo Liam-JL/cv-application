@@ -1,8 +1,17 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { HistoryBlock } from "./HistoryBlock"
 
 export default function WorkSection({active}) {
-    const [history, setHistory] = useState([])
+    const [history, setHistory] = useState(() => {
+        const localValue = localStorage.getItem("WORK_HISTORY_ITEMS")
+        if (localValue == null) return []
+
+        return JSON.parse(localValue)
+    })
+
+    useEffect(() => {
+        localStorage.setItem("WORK_HISTORY_ITEMS", JSON.stringify(history))
+    }, [history])
 
     function createWorkBlock() {
         const newEntry = {

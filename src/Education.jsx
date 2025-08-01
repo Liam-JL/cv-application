@@ -1,8 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function EducationSection({active}) {
-    const [education, setEducation] = useState([])
+    const [education, setEducation] = useState(() => {
+        const localValue = localStorage.getItem("EDUCATION_ITEMS")
+        if (localValue == null) return []
+        return JSON.parse(localValue)
+    })
 
+    useEffect(() => {
+        localStorage.setItem("EDUCATION_ITEMS", JSON.stringify(education))
+    }, [education])
+    
     function addEducation() {
         const newEntry = {
             id: crypto.randomUUID(),
