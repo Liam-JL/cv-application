@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import { MdEditNote as EditIcon} from "react-icons/md";
 
-export default function EducationSection({active}) {
+export default function EducationSection({active, onActivate}) {
     const [education, setEducation] = useState(() => {
         const localValue = localStorage.getItem("EDUCATION_ITEMS")
         if (localValue == null) return []
@@ -38,12 +39,13 @@ export default function EducationSection({active}) {
     return (
         <section className="section section--education" aria-labelledby="education-heading">
             <h2 id="education-heading">Education</h2>
-            {active ? <button className="btn" onClick={addEducation}>Add Education</button> : null}
+            {active && <button className="btn" onClick={addEducation}>Add Education</button>}
             <ul>
                 {education.map(entry =>
                     <EducationBlock {...entry} key={entry.id} active={active} handleEdit={handleEdit} deleteBlock={deleteEntry}/>
                 )}
             </ul>
+            {!active && <button className="btn" aria-label="edit-section" onClick={() => onActivate("education")}> <EditIcon />Education</button>}
         </section>
     )
 }

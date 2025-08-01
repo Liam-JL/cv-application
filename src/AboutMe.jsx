@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import { MdEditNote as EditIcon} from "react-icons/md";
 
-export default function AboutMeSection({active}) {
+export default function AboutMeSection({active, onActivate}) {
     const [aboutMe, setAboutMe] = useState(() => {
         const localValue = localStorage.getItem("ABOUT_ME_ITEMS")
         if (localValue == null) return {name:"name", title:"title", bio:"bio"}
@@ -31,6 +32,7 @@ export default function AboutMeSection({active}) {
                     handleEdit={handleEdit}
                 />
             ))}
+            {!active && <button className="btn" aria-label="edit-section" onClick={() => onActivate("about-me")}> <EditIcon /> About Me</button>}
         </section>
     )
 
