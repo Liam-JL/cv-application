@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TiDelete as DeleteIcon} from "react-icons/ti";
 
 export default function SkillSection({active}) {
-    const [skills, setSkills] = useState([])
-    const [newItem, setNewItem] = useState("")
+    const [skills, setSkills] = useState(() => {
+        const localValue = localStorage.getItem("SKILL_ITEMS")
+        if (localValue == null) return []
+        return JSON.parse(localValue)
+    })
 
+    useEffect(() => {
+        localStorage.setItem("SKILL_ITEMS", JSON.stringify(skills))
+    }, [skills])
+
+    const [newItem, setNewItem] = useState("")
 
     function handleSubmit(e) {
         e.preventDefault()
