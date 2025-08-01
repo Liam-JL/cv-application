@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { TiDelete as DeleteIcon} from "react-icons/ti";
+import { MdEditNote as EditIcon} from "react-icons/md";
 
-export default function SkillSection({active}) {
+export default function SkillSection({active, onActivate}) {
     const [skills, setSkills] = useState(() => {
         const localValue = localStorage.getItem("SKILL_ITEMS")
         if (localValue == null) return []
@@ -47,6 +48,7 @@ export default function SkillSection({active}) {
                     <SkillItem  active={active} key={skill.id} id={skill.id} value={skill.value} deleteSkill={deleteSkill} />
                 )}
             </ul>
+            {!active && <button className="btn" aria-label="edit-section" onClick={() => onActivate("skill")}><EditIcon />Skills</button>}
         </section>
     )
 }

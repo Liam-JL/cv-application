@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { HistoryBlock } from "./HistoryBlock"
+import { MdEditNote as EditIcon} from "react-icons/md";
 
-export default function WorkSection({active}) {
+export default function WorkSection({active, onActivate}) {
     const [history, setHistory] = useState(() => {
         const localValue = localStorage.getItem("WORK_HISTORY_ITEMS")
         if (localValue == null) return []
@@ -67,7 +68,9 @@ export default function WorkSection({active}) {
                 )
             })}
             </ul>
-            {active ? <button onClick={createWorkBlock}>Add Work</button> : null}
+            {active ? 
+            <button onClick={createWorkBlock}>Add Work</button> : 
+            <button className="btn" aria-label="edit-section" onClick={() => onActivate("work")}> <EditIcon /> Work History</button> }
         </section>
     )
 }

@@ -3,6 +3,7 @@ import { MdEmail as EmailIcon } from "react-icons/md"
 import { FaMobileAlt as PhoneIcon } from "react-icons/fa"
 import { FaLocationDot as LocationIcon } from "react-icons/fa6"
 import { TbSocial as SocialIcon } from "react-icons/tb"
+import { MdEditNote as EditIcon} from "react-icons/md";
 
 const defaultContact = {
   email: "email@example.com",
@@ -11,7 +12,7 @@ const defaultContact = {
   social: "https://social-link.com",
 }
 
-export default function ContactSection({ active }) {
+export default function ContactSection({ active, onActivate }) {
   const [contactInfo, setContactInfo] = useState(() => {
     const localValue = localStorage.getItem("CONTACT_INFO")
     return localValue ? JSON.parse(localValue) : defaultContact
@@ -45,6 +46,7 @@ export default function ContactSection({ active }) {
           </li>
         ))}
       </ul>
+      {!active && <button className="btn" aria-label="edit-section" onClick={() => onActivate("contact")}> <EditIcon /> Contact</button>}
     </section>
   )
 }
