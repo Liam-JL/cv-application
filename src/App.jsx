@@ -22,14 +22,14 @@ function App() {
   }
 
   return (
-    <>
+    <div className="app-container">
       <Header saveAll={saveAll} preview={preview}/>
       <AboutMeSection active={activeSection === "about-me"} onActivate={onActivate}/>
       <ContactSection active={activeSection === "contact" } onActivate={onActivate} />    
       <WorkSection active={activeSection === "work"} onActivate={onActivate}/>
       <SkillSection active={activeSection === "skill"} onActivate={onActivate} />
       <EducationSection active={activeSection === "education"} onActivate={onActivate}/>
-    </>
+    </div>
   )
 }
 

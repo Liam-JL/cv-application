@@ -69,7 +69,7 @@ export default function WorkSection({active, onActivate}) {
             })}
             </ul>
             {active ? 
-            <button onClick={createWorkBlock}>Add Work</button> : 
+            <button className="btn" onClick={createWorkBlock}>Add Work</button> : 
             <button className="btn" aria-label="edit-section" onClick={() => onActivate("work")}> <EditIcon /> Work History</button> }
         </section>
     )

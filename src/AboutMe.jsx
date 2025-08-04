@@ -20,7 +20,7 @@ export default function AboutMeSection({active, onActivate}) {
     }
 
     return (
-        <section className="section section--about me" aria-label="about-me">
+        <section className="section section--about-me" aria-label="about-me">
             {["name", "title", "bio"].map(field => (
                 <EditableField
                     key={field}
@@ -28,7 +28,7 @@ export default function AboutMeSection({active, onActivate}) {
                     active={active}
                     value={aboutMe[field]}
                     tag={field === "bio" ? "p" : field === "title" ? "h2" : "h1"}
-                    className={`${field}-field`}
+                    className={`about-me__field ${field}-field`}
                     handleEdit={handleEdit}
                 />
             ))}
@@ -39,11 +39,17 @@ export default function AboutMeSection({active, onActivate}) {
 }
 
 export function EditableField({label, active, value, tag = "p", className = undefined, handleEdit}) {
-    const Tag = tag
+    let Tag = tag
+    if (active && label === "bio") {
+        Tag = "textarea";
+    } else if (active) {
+        Tag = "input";
+    }
+
 
     return active ? (
-        <input 
-        className={`${className} ${className}--input`}  
+        <Tag 
+        className={`about-me__field ${className} ${className}--input`}  
         value={value} onChange={(e) => handleEdit(label, e.target.value)} 
         aria-label={label}
         />
