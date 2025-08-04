@@ -28,5 +28,36 @@
 
 .header .btn {
     background-color: var(--color-bg);
-    color: var(--color-accent);
+    color: var(--color-text);
+    border: 2px solid var(--color-text)
 }
+
+/* About Me */
+.section--about-me {
+    display: grid;
+    row-gap: 0.2rem;
+}
+
+.about-me__field {
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+    resize: vertical;
+    box-sizing: border-box;
+    padding: 0.2rem;
+}
+
+.name-field {
+    color: var(--color-accent);
+    font-size: 2rem;
+    font-family: "Inter", sans-serif;
+}
+
+.title-field {
+    color: var(--color-text-secondary);
+    font-size: 1.3rem;
+    font-family: "Inter", sans-serif;
+}
+
+
+
