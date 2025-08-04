@@ -3,6 +3,7 @@ import ContactSection from "./Contact"
 import WorkSection from "./Work"
 import SkillSection from "./Skills"
 import EducationSection from "./Education"
+import Header from "./Header"
 import { useState } from "react"
 
 function App() {
@@ -12,14 +13,22 @@ function App() {
     setActiveSection(section)
   }  
 
+  function saveAll() {
+    setActiveSection("")
+  }
+
+  function preview() {
+    window.print()
+  }
+
   return (
     <>
+      <Header saveAll={saveAll} preview={preview}/>
       <AboutMeSection active={activeSection === "about-me"} onActivate={onActivate}/>
       <ContactSection active={activeSection === "contact" } onActivate={onActivate} />    
       <WorkSection active={activeSection === "work"} onActivate={onActivate}/>
       <SkillSection active={activeSection === "skill"} onActivate={onActivate} />
       <EducationSection active={activeSection === "education"} onActivate={onActivate}/>
-      <button className="btn" onClick={() => setActiveSection("")}>Save All</button>
     </>
   )
 }
