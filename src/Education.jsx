@@ -38,7 +38,7 @@ export default function EducationSection({active, onActivate}) {
 
     return (
         <section className="section section--education" aria-labelledby="education-heading">
-            <h2 id="education-heading">Education</h2>
+            <h2 id="education-heading" className="section__header">Education</h2>
             {active && <button className="btn" onClick={addEducation}>Add Education</button>}
             <ul>
                 {education.map(entry =>

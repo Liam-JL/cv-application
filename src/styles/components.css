@@ -3,13 +3,16 @@
     margin: 0 auto;
     padding: 2rem;
     display: grid;
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+    column-gap: 2rem;
     color: var(--color-text);
     background-color: var(--color-bg);
 }
 
 .header {
     background-color: var(--color-accent);
+    grid-column: 1/-1;
     display: flex;
     align-items: center;
     padding: 1rem;
@@ -22,6 +25,7 @@
 }
 
 .header__heading {
+    font-size: 2rem;
     color: var(--color-bg);
     font-weight: 300;
 }
@@ -36,6 +40,7 @@
 .section--about-me {
     display: grid;
     row-gap: 0.2rem;
+    grid-column: 1/-1;
 }
 
 .about-me__field {
@@ -63,6 +68,7 @@
 .section--contact {
     display: grid;
     gap: 1rem;
+    grid-column: 1/-1;
 
 }
 
@@ -80,3 +86,81 @@
     align-items: center;
     gap: 0.3rem;
 }
+.contact-icon {
+    fill: var(--color-accent);
+}
+
+/* Work Section */
+.section--work {
+    grid-row: 4/6;
+    display: grid;
+    row-gap: 1rem;
+}
+
+.section__header {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.history-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.2rem;
+}
+
+.history-block-list {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.history-block__input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem;
+}
+
+.btn--add-work {
+    margin-top: 1rem;
+}
+
+.history-block__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    grid-column: 1/-1;
+}
+
+.history-block__company {
+    font-size: 1.2rem;
+    grid-column: 1/-1;
+}
+
+.history-block__dates {
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.history-block__location {
+    text-align: right;
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.history-block__summary-list {
+    grid-column: 1/-1;
+}
+
+.history-block__summary-point {
+    text-indent: 5px;
+}
+
+.history-block__summary-point::before {
+    content: '— ';
+    text-indent: 5px;
+}
+
+
+
+
+
+
