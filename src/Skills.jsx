@@ -32,7 +32,7 @@ export default function SkillSection({active, onActivate}) {
  
     return (
         <section className="section section--skills" aria-labelledby="skills-heading">
-            <h2 id="skills-heading">Skills</h2>
+            <h2 id="skills-heading" className="section__header">Skills</h2>
             {active ? 
             <form className="new-skill-form"onSubmit={handleSubmit}>
                 <input 
