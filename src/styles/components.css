@@ -159,8 +159,49 @@
     text-indent: 5px;
 }
 
+/* Skills */
+.section--skills {
+    display: grid;
+    row-gap: 1rem;
+}
 
+.new-skill-form {
+    display: flex;
+    gap: 2rem;
+}
 
+.new-skill-form-input {
+    flex-grow: 1;
+    padding: 0.3rem;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-item {
+    display: flex;
+}
+
+.skill-item__value {
+    background-color: var(--color-text-secondary);
+    border-radius: 4px;
+    color: var(--color-bg);
+    padding: 0.4rem;
+
+}
+
+.btn--delete-skill {
+    background: none;
+    border: none;
+    min-width: fit-content;
+}
+
+.btn--delete-skill svg {
+    fill: red;
+}
 
 
 

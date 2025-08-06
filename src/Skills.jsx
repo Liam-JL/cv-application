@@ -36,6 +36,7 @@ export default function SkillSection({active, onActivate}) {
             {active ? 
             <form className="new-skill-form"onSubmit={handleSubmit}>
                 <input 
+                className="new-skill-form-input"
                 type="text"
                 value={newItem}
                 onChange={(e) => setNewItem(e.target.value)}
@@ -43,7 +44,7 @@ export default function SkillSection({active, onActivate}) {
                 <button className="btn">Add</button>
             </form> 
             : null}
-            <ul>
+            <ul className="skills-list">
                 {skills.map(skill => 
                     <SkillItem  active={active} key={skill.id} id={skill.id} value={skill.value} deleteSkill={deleteSkill} />
                 )}
@@ -55,8 +56,8 @@ export default function SkillSection({active, onActivate}) {
 
 export function SkillItem({active, id, value, deleteSkill}) {
     return (
-        <li>
-            {value}
+        <li className="skill-item">
+            <span className="skill-item__value">{value}</span>
             {active ? 
             <button 
             className="btn btn--delete-skill" 
