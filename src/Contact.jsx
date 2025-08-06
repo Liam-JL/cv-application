@@ -69,7 +69,7 @@ function ContactInfoBlock({ active, label, icon, value, editField, className }) 
 
   return active ? (
     <div className="contact-info-block">
-      <Icon />
+      <Icon className="contact-icon"/>
       <input
         className={`${className ?? ""} ${className ? `${className}--input` : ""}`}
         value={value}
@@ -80,7 +80,7 @@ function ContactInfoBlock({ active, label, icon, value, editField, className }) 
     </div>
   ) : (
     <div className="contact-info-block">
-      <Icon />
+      <Icon className="contact-icon"/>
       {getHref() ? <a href={getHref()}>{value}</a> : <span>{value}</span>}
     </div>
   )
