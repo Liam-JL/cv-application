@@ -3,13 +3,16 @@
     margin: 0 auto;
     padding: 2rem;
     display: grid;
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+    column-gap: 2rem;
     color: var(--color-text);
     background-color: var(--color-bg);
 }
 
 .header {
     background-color: var(--color-accent);
+    grid-column: 1/-1;
     display: flex;
     align-items: center;
     padding: 1rem;
@@ -36,6 +39,7 @@
 .section--about-me {
     display: grid;
     row-gap: 0.2rem;
+    grid-column: 1/-1;
 }
 
 .about-me__field {
@@ -63,6 +67,7 @@
 .section--contact {
     display: grid;
     gap: 1rem;
+    grid-column: 1/-1;
 
 }
 
