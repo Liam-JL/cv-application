@@ -11,6 +11,7 @@ input {
 *, *:before, *:after {
   box-sizing: inherit;
   font-family: "Source Serif 4", serif;
+  font-size: 14px;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -38,7 +39,7 @@ img {
   --font-body: 'Source Serif Pro', serif;
   --color-bg: #ffffff;
   --color-text: #1a1a1a;
-  --color-text-secondary: #757474; 
+  --color-text-secondary: #525151; 
   --color-accent: #1b666b; /* or pick your preferred */
 
   --btn-bg: var(--color-accent);
