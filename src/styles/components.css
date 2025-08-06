@@ -25,6 +25,7 @@
 }
 
 .header__heading {
+    font-size: 2rem;
     color: var(--color-bg);
     font-weight: 300;
 }
