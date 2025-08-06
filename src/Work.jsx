@@ -19,8 +19,8 @@ export default function WorkSection({active, onActivate}) {
             id: crypto.randomUUID(),
             title: "Job Title",
             company: "Company Name",
-            location: "Location",
             dates: "Dates from - To",
+            location: "Location",
             summary: ["Summary of your accomplishments in this position", 
                 "Summary of your accomplishments in this position", 
                 "Summary of your accomplishments in this position"]
@@ -69,7 +69,7 @@ export default function WorkSection({active, onActivate}) {
             })}
             </ul>
             {active ? 
-            <button className="btn" onClick={createWorkBlock}>Add Work</button> : 
+            <button className="btn btn--add-work" onClick={createWorkBlock}>Add Block</button> : 
             <button className="btn" aria-label="edit-section" onClick={() => onActivate("work")}> <EditIcon /> Work History</button> }
         </section>
     )
