@@ -39,12 +39,13 @@ export default function EducationSection({active, onActivate}) {
     return (
         <section className="section section--education" aria-labelledby="education-heading">
             <h2 id="education-heading" className="section__header">Education</h2>
-            {active && <button className="btn" onClick={addEducation}>Add Education</button>}
-            <ul>
+            
+            <ul className="education-block-list">
                 {education.map(entry =>
                     <EducationBlock {...entry} key={entry.id} active={active} handleEdit={handleEdit} deleteBlock={deleteEntry}/>
                 )}
             </ul>
+            {active && <button className="btn" onClick={addEducation}>Add Education</button>}
             {!active && <button className="btn" aria-label="edit-section" onClick={() => onActivate("education")}> <EditIcon />Education</button>}
         </section>
     )
@@ -53,16 +54,16 @@ export default function EducationSection({active, onActivate}) {
 function EducationBlock({active, id, qualification, location, dates, handleEdit, deleteBlock}) {
     return active ? (
         <li>
-            <input name="qualification" type="text" value={qualification} onChange={e => handleEdit(id, e.target.name, e.target.value)} />
-            <input name="location" type="text" value={location} onChange={e => handleEdit(id, e.target.name, e.target.value)} />
-            <input name="dates" type="text" value={dates} onChange={e => handleEdit(id, e.target.name, e.target.value)} />
+            <input className="education-block__field education-block__field--qualification" name="qualification" type="text" value={qualification} onChange={e => handleEdit(id, e.target.name, e.target.value)} />
+            <input className="education-block__field education-block__field--location" name="location" type="text" value={location} onChange={e => handleEdit(id, e.target.name, e.target.value)} />
+            <input className="education-block__field education-block__field--dates" name="dates" type="text" value={dates} onChange={e => handleEdit(id, e.target.name, e.target.value)} />
             <button className="btn" onClick={() => deleteBlock(id)}>Delete Block</button>
         </li>
     ) : (
         <li>
-            <h3>{qualification}</h3>
-            <p>{location}</p>
-            <p>{dates}</p>
+            <h3 className="education-block__field education-block__field--qualification">{qualification}</h3>
+            <p className="education-block__field education-block__field--location">{location}</p>
+            <p className="education-block__field education-block__field--dates">{dates}</p>
         </li>
     )
 }

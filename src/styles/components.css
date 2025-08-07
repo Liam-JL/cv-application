@@ -92,7 +92,7 @@
 
 /* Work Section */
 .section--work {
-    grid-row: 4/6;
+    grid-column: 1;
     display: grid;
     row-gap: 1rem;
 }
@@ -163,6 +163,8 @@
 .section--skills {
     display: grid;
     row-gap: 1rem;
+    grid-column: 2;
+    align-items: start;
 }
 
 .new-skill-form {
@@ -183,6 +185,7 @@
 
 .skill-item {
     display: flex;
+    align-self: center;
 }
 
 .skill-item__value {
@@ -204,4 +207,34 @@
 }
 
 
+/* Education */
+.section--education {
+    display: grid;
+    gap: 1rem;
+    grid-column: 2;
+}
 
+.education-block-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.education-block__field {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem;
+}
+
+.education-block__field--qualification {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.education-block__field--location {
+    font-size: 1.2rem;
+}
+
+.education-block__field--dates {
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
