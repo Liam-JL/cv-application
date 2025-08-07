@@ -190,7 +190,7 @@
 }
 
 .skill-item__value {
-    background-color: var(--color-text-secondary);
+    background-color: var(--color-text-secondary) !important;
     border-radius: 4px;
     color: var(--color-bg);
     padding: 0.4rem;
