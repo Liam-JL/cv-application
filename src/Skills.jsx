@@ -41,7 +41,7 @@ export default function SkillSection({active, onActivate}) {
                 value={newItem}
                 onChange={(e) => setNewItem(e.target.value)}
                 />
-                <button className="btn">Add</button>
+                <button className="btn new-skill-form-add-btn">Add</button>
             </form> 
             : null}
             <ul className="skills-list">

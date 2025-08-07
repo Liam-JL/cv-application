@@ -1,0 +1,54 @@
+/* Adjust layout for smaller screens */
+@media only screen and (max-width: 1000px) {
+    .app-container {
+        grid-template-columns: 1fr;
+        padding: 0.4rem;
+    }
+
+    .header {
+        border-radius: 0;
+        justify-content: center;
+        margin: -0.7rem;
+    }
+
+    .section--skills {
+        grid-column: 1;
+    }
+
+    .section--education {
+        grid-column: 1;
+    }
+
+    .header span, .header__heading {
+        display: none;
+    }
+
+    .contact-section__list {
+        grid-template-columns: 1fr;
+        row-gap: 0.3rem;
+    }
+
+    .btn {
+        max-width: 250px;
+        justify-self: center;
+    }
+
+    .new-skill-form {
+        display: block;
+        position: relative;
+    }
+
+    .new-skill-form-input {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .new-skill-form-add-btn {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        min-width: 30px;
+        border-radius: 4px;
+    }
+
+}
