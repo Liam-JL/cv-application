@@ -92,9 +92,10 @@
 
 /* Work Section */
 .section--work {
-    grid-column: 1;
     display: grid;
     row-gap: 1rem;
+    grid-column: 1;
+    grid-row: 4/6;
 }
 
 .section__header {
