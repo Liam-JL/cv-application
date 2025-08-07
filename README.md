@@ -1,12 +1,43 @@
-# React + Vite
+# CV Builder (React Project)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customizable CV/resume builder app built with React — [The Odin Project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application).
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Sections & Components**:
+  - **About Me**: Name, title, and bio — editable with live preview.
+  - **Contact**: Email, phone, location, and social links — editable and displayed in a grid.
+  - **Work Experience**: Multiple entries with editable job title, company, location, dates, and bullet points.
+  - **Skills**: Dynamic list with add/remove functionality and styled skill tags.
+  - **Education**: Add multiple qualifications, each editable with dates and location.
+  
+- **Editing UI**:
+  - Each section has **Edit/Submit** buttons to toggle between input fields and display mode.
+  - All editing is controlled via parent state for consistent UI behavior.
 
-## Expanding the ESLint configuration
+- **State Management**:
+  - Data is stored in component state via `useState`.
+  - User input is handled through callbacks like `editField`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Persistence**:
+  - All data is synced to `localStorage` using `useEffect`, allowing for data persistence across sessions.
+
+- **Preview & Print**:
+  - A **preview mode** hides editing buttons and input fields for clean presentation.
+  - **Print view** is optimized using `@media print`, preserving the layout and styling when saving as PDF via `window.print()`.
+
+## Getting Started
+
+1. **Install dependencies:**
+   ```bash
+   npm install 
+   ```
+
+2. **Run the app:**
+    ```bash
+    npm start
+    ```
+3. **Build for production:**
+    ```bash
+    npm run build
+    ```
